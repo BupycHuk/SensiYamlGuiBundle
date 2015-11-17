@@ -1,5 +1,5 @@
 {
-    "name": "sensi/sensi-yaml-gui-bundle",
+    "name": "bupychuk/sensi-yaml-gui-bundle",
     "type": "symfony-bundle",
     "description": "Simple symfony2 yaml gui which allows you to edit yaml config files in a simple webform.",
     "keywords": ["yaml", "gui", "sensi", "sonata-admin extension"],
