@@ -67,7 +67,8 @@ class YamlConfigType extends AbstractType
                 $options = array(
                     'label'=> $label,
                     'data' => $subItem,
-                    'translation_domain' => 'sensi_yaml_gui'
+                    'translation_domain' => 'sensi_yaml_gui',
+                    'required' => false
                 );
 
                 $builder->add($label, $this->whatFormTypeFor($subItem), $options);
