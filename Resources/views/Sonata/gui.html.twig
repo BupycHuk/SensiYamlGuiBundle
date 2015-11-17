@@ -23,26 +23,17 @@
 	{% endfor %}
 {% endblock %}
 
-{% block content %}
+{% block form %}
 	 <h1>{{ "sensi.yamlgui.title.edit"|trans([], 'sensi_yaml_gui') }} :: {{ config_file }}</h1>
-	 <div class="sensi-yaml-gui-container">
+	 <div class="sonata-ba-form">
         <div class="sensi-yamlgui-form-errors">
             {{ form_errors(form) }}
         </div>
         <form action="" method="POST">
 
             {{ form_rest(form) }}
-
-            <div class="sensi-yamlgui-form-footer">
-                <p>
-                    <button type="submit" class="sf-button">
-                        <span class="border-l">
-                            <span class="border-r">
-                                <span class="btn-bg">{{ "sensi.yamlgui.button.save"|trans([], 'sensi_yaml_gui') }}</span>
-                            </span>
-                        </span>
-                    </button>
-                </p>
+            <div class="well well-small form-actions">
+                <button type="submit" class="btn btn-success" name="btn_update_and_edit"><i class="fa fa-save"></i> {{ 'btn_update_and_edit_again'|trans({}, 'SonataAdminBundle') }}</button>
             </div>
         </form>
     </div>

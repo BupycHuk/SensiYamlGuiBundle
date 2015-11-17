@@ -37,7 +37,8 @@ class Configurator
     protected $configDir;
 
     const LEVEL_SEPARATOR = '--';
-	
+    const DOT_SEPARATOR = '++';
+
 	/**
 	 * @param string $configDir
 	 */
@@ -96,10 +97,9 @@ class Configurator
     	foreach($parameters as $key => $value) {
     		if (strpos($key, '--')) {
     			$parentKey = explode('--', $key);
-    			if (isset($this->parameters[$parentKey[0]][$parentKey[1]])) {
-    				$this->parameters[$parentKey[0]][$parentKey[1]] = $value;
-    				unset($parameters[$key]);
-    			}
+                $subKey = str_replace(self::DOT_SEPARATOR, '.', $parentKey[1]);
+                $this->parameters[$parentKey[0]][$subKey] = $value;
+                unset($parameters[$key]);
     		}
     	}
     	

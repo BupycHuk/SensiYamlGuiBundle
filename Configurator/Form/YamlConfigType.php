@@ -50,13 +50,14 @@ class YamlConfigType extends AbstractType
     protected function handleLevelsRecursive(FormBuilderInterface $builder, $item, $key = NULL)
     {
         $separator = Configurator::LEVEL_SEPARATOR;
+        $dotSeparator = Configurator::DOT_SEPARATOR;
 
         foreach ($item as $subKey => $subItem) {
 
             if(isset($key)){
-                $label = str_replace('.', '_', $key . $separator . $subKey);
+                $label = str_replace('.', $dotSeparator, $key . $separator . $subKey);
             } else {
-                $label = str_replace('.', '_', $subKey);
+                $label = str_replace('.', $dotSeparator, $subKey);
             }
 
             if (is_array($subItem)) {
