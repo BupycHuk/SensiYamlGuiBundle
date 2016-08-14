@@ -19,7 +19,7 @@
         
     },
     "suggest": {
-        "sonata-project/admin-bundle": "2.2.x-dev"
+        "sonata-project/admin-bundle": "2.x-dev"
     },
     "autoload": {
         "psr-0": { "Sensi\\Bundle\\YamlGuiBundle\\": "" }
